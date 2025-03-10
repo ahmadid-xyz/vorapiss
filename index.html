@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Vor Apis | Next-Gen Interface</title>
+ <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+ <style>
+ :root {
+ --main-color: #00f3ff;
+ --secondary-color: #ff00ff;
+ --bg-color: #0a0a1a;
+ }
+
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ background: var(--bg-color);
+ font-family: 'Exo 2', sans-serif;
+ color: #fff;
+ overflow: hidden;
+ position: relative;
+ min-height: 100vh;
+ }
+
+ .particles-bg {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: -1;
+ }
+
+ .container {
+ padding: 2rem;
+ text-align: center;
+ position: relative;
+ z-index: 1;
+ }
+
+ .header {
+ margin: 5rem 0;
+ animation: fadeIn 2s ease-in;
+ }
+
+ h1 {
+ font-family: 'Orbitron', sans-serif;
+ font-size: 4rem;
+ background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ text-shadow: 0 0 50px rgba(0, 243, 255, 0.5);
+ margin-bottom: 1rem;
+ }
+
+ .description {
+ font-size: 1.2rem;
+ max-width: 600px;
+ margin: 0 auto 3rem;
+ line-height: 1.6;
+ opacity: 0.9;
+ }
+
+ .main-btn {
+ padding: 1.5rem 3rem;
+ font-size: 1.5rem;
+ background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+ border: none;
+ border-radius: 50px;
+ color: #fff;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ position: relative;
+ overflow: hidden;
+ margin: 2rem 0;
+ }
+
+ .main-btn:hover {
+ transform: scale(1.1);
+ box-shadow: 0 0 50px rgba(0, 243, 255, 0.5);
+ }
+
+ .status-panel {
+ background: rgba(255, 255, 255, 0.05);
+ padding: 2rem;
+ border-radius: 15px;
+ backdrop-filter: blur(10px);
+ max-width: 500px;
+ margin: 3rem auto;
+ border: 1px solid var(--main-color);
+ }
+
+ .system-status {
+ text-align: left;
+ margin: 1rem 0;
+ }
+
+ .features-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 2rem;
+ padding: 2rem;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+
+ .feature-card {
+ background: rgba(255, 255, 255, 0.05);
+ padding: 2rem;
+ border-radius: 15px;
+ transition: all 0.3s ease;
+ border: 1px solid transparent;
+ }
+
+ .feature-card:hover {
+ transform: translateY(-10px);
+ border-color: var(--main-color);
+ box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+ }
+
+ @keyframes fadeIn {
+ from { opacity: 0; transform: translateY(50px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+
+ .battery-status {
+ width: 100%;
+ height: 20px;
+ background: rgba(255, 255, 255, 0.1);
+ border-radius: 10px;
+ overflow: hidden;
+ position: relative;
+ }
+
+ .battery-fill {
+ height: 100%;
+ background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+ transition: width 0.5s ease;
+ }
+
+ .cyber-line {
+ position: absolute;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, var(--main-color), transparent);
+ animation: scan 3s infinite linear;
+ }
+
+ @keyframes scan {
+ 0% { top: 0; }
+ 100% { top: 100%; }
+ }
+ </style>
+</head>
+<body>
+ <div id="particles-js" class="particles-bg"></div>
+ 
+ <div class="container">
+ <div class="header">
+ <h1>VOR APIS</h1>
+ <p class="description">Dapatkan API Secara Gratis<br>No Ribet Dan Tanpa Login.</p>
+ 
+ <div class="status-panel">
+ <div class="system-status">
+ <h3>SYSTEM STATUS</h3>
+ <div class="cyber-line"></div>
+ <p>Battery Level: <span id="battery-level">Loading...</span></p>
+ <div class="battery-status">
+ <div class="battery-fill" id="battery-fill"></div>
+ </div>
+ <p>System Readiness: <span id="system-readiness">87%</span></p>
+ <div class="progress-bar">
+ <div class="progress-fill" style="width: 87%"></div>
+ </div>
+ </div>
+ </div>
+ <a href="https://vor-apis.vercel.app/">
+ <button class="main-btn">STARS NOW</button>
+ </a>
+ </div>
+
+ <div class="features-grid">
+ <div class="feature-card">
+ <h3>Keunggulan</h3>
+ <p>Memiliki Api Yang Keren Untuk Kebutuhan Aplikasi Kamu Dan Bot WhatsApp</p>
+ </div>
+ <div class="feature-card">
+ <h3>Layanan Gratis</h3>
+ <p>Nikmati Layanan Api Gratis Tanpa Berbayar Dan Tanpa Login Untuk Mempermudah Pengguna.</p>
+ </div>
+ <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+ <script>
+ particlesJS('particles-js', {
+ particles: {
+ number: { value: 150 },
+ color: { value: '#00f3ff' },
+ shape: { type: 'circle' },
+ opacity: { value: 0.5 },
+ size: { value: 3 },
+ move: {
+ enable: true,
+ speed: 2,
+ direction: 'none',
+ random: true,
+ straight: false,
+ out_mode: 'out',
+ bounce: false
+ }
+ },
+ interactivity: {
+ detect_on: 'canvas',
+ events: {
+ onhover: { enable: true, mode: 'repulse' },
+ onclick: { enable: true, mode: 'push' },
+ resize: true
+ }
+ },
+ retina_detect: true
+ });
+ if ('getBattery' in navigator) {
+ navigator.getBattery().then(battery => {
+ function updateBatteryStatus() {
+ const batteryPercent = Math.floor(battery.level * 100);
+ document.getElementById('battery-level').textContent = `${batteryPercent}%`;
+ document.getElementById('battery-fill').style.width = `${batteryPercent}%`;
+ }
+ battery.addEventListener('levelchange', updateBatteryStatus);
+ updateBatteryStatus();
+ });
+ } else {
+ document.getElementById('battery-level').textContent = 'N/A';
+ }
+ let readiness = 87;
+ const readinessElement = document.getElementById('system-readiness');
+ setInterval(() => {
+ readiness = (readiness >= 100) ? 87 : readiness + Math.random();
+ readinessElement.textContent = `${Math.min(100, Math.floor(readiness))}%`;
+ }, 3000);
+ </script>
+</body>
+</html>
