@@ -3,244 +3,230 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Vor Apis | Next-Gen Interface</title>
- <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+ <title>Vortex-APIs | Powerful API Solutions</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
  <style>
- :root {
- --main-color: #00f3ff;
- --secondary-color: #ff00ff;
- --bg-color: #0a0a1a;
- }
-
  * {
  margin: 0;
  padding: 0;
  box-sizing: border-box;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
 
  body {
- background: var(--bg-color);
- font-family: 'Exo 2', sans-serif;
+ background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
  color: #fff;
- overflow: hidden;
- position: relative;
- min-height: 100vh;
+ line-height: 1.6;
  }
 
- .particles-bg {
+ .navbar {
+ background: linear-gradient(90deg, #2a2a2a, #1a1a1a);
+ padding: 1rem 5%;
  position: fixed;
- top: 0;
- left: 0;
  width: 100%;
- height: 100%;
- z-index: -1;
+ top: 0;
+ z-index: 1000;
+ box-shadow: 0 4px 15px rgba(0,0,0,0.2);
  }
 
- .container {
- padding: 2rem;
+ .navbar-content {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+
+ .logo {
+ font-size: 1.8rem;
+ font-weight: bold;
+ background: linear-gradient(45deg, #00ff88, #00b4d8);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ }
+
+ .nav-links {
+ display: flex;
+ gap: 2rem;
+ }
+
+ .nav-links a {
+ color: #fff;
+ text-decoration: none;
+ transition: color 0.3s;
+ }
+
+ .nav-links a:hover {
+ color: #00ff88;
+ }
+
+ .hero {
+ height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
  text-align: center;
- position: relative;
- z-index: 1;
+ background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+ url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
+ background-size: cover;
+ background-position: center;
+ padding: 0 5%;
  }
 
- .header {
- margin: 5rem 0;
- animation: fadeIn 2s ease-in;
+ .hero-content {
+ max-width: 800px;
  }
 
  h1 {
- font-family: 'Orbitron', sans-serif;
- font-size: 4rem;
- background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+ font-size: 3.5rem;
+ margin-bottom: 1rem;
+ background: linear-gradient(45deg, #00ff88, #00b4d8);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
- text-shadow: 0 0 50px rgba(0, 243, 255, 0.5);
- margin-bottom: 1rem;
  }
 
- .description {
- font-size: 1.2rem;
- max-width: 600px;
- margin: 0 auto 3rem;
- line-height: 1.6;
- opacity: 0.9;
+ .cta-button {
+ display: inline-block;
+ padding: 1rem 2rem;
+ margin-top: 2rem;
+ background: linear-gradient(45deg, #00ff88, #00b4d8);
+ color: #1a1a1a;
+ text-decoration: none;
+ border-radius: 30px;
+ font-weight: bold;
+ transition: transform 0.3s, box-shadow 0.3s;
  }
 
- .main-btn {
- padding: 1.5rem 3rem;
- font-size: 1.5rem;
- background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
- border: none;
- border-radius: 50px;
- color: #fff;
- cursor: pointer;
- transition: all 0.3s ease;
- position: relative;
- overflow: hidden;
- margin: 2rem 0;
+ .cta-button:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 5px 15px rgba(0,255,136,0.4);
  }
 
- .main-btn:hover {
- transform: scale(1.1);
- box-shadow: 0 0 50px rgba(0, 243, 255, 0.5);
- }
-
- .status-panel {
- background: rgba(255, 255, 255, 0.05);
- padding: 2rem;
- border-radius: 15px;
- backdrop-filter: blur(10px);
- max-width: 500px;
- margin: 3rem auto;
- border: 1px solid var(--main-color);
- }
-
- .system-status {
- text-align: left;
- margin: 1rem 0;
+ .features {
+ padding: 5rem 5%;
+ background: #1a1a1a;
  }
 
  .features-grid {
  display: grid;
- grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
  gap: 2rem;
- padding: 2rem;
- max-width: 1200px;
- margin: 0 auto;
+ margin-top: 3rem;
  }
 
  .feature-card {
- background: rgba(255, 255, 255, 0.05);
+ background: #2d2d2d;
  padding: 2rem;
  border-radius: 15px;
- transition: all 0.3s ease;
- border: 1px solid transparent;
+ transition: transform 0.3s;
  }
 
  .feature-card:hover {
  transform: translateY(-10px);
- border-color: var(--main-color);
- box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
  }
 
- @keyframes fadeIn {
- from { opacity: 0; transform: translateY(50px); }
- to { opacity: 1; transform: translateY(0); }
+ .feature-icon {
+ font-size: 2.5rem;
+ color: #00ff88;
+ margin-bottom: 1rem;
  }
 
- .battery-status {
- width: 100%;
- height: 20px;
- background: rgba(255, 255, 255, 0.1);
- border-radius: 10px;
- overflow: hidden;
- position: relative;
+ .docs-section {
+ padding: 5rem 5%;
+ text-align: center;
  }
 
- .battery-fill {
- height: 100%;
- background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
- transition: width 0.5s ease;
+ footer {
+ background: #1a1a1a;
+ padding: 3rem 5%;
+ text-align: center;
  }
 
- .cyber-line {
- position: absolute;
- width: 100%;
- height: 2px;
- background: linear-gradient(90deg, transparent, var(--main-color), transparent);
- animation: scan 3s infinite linear;
+ @media (max-width: 768px) {
+ .nav-links {
+ display: none;
  }
-
- @keyframes scan {
- 0% { top: 0; }
- 100% { top: 100%; }
+ 
+ h1 {
+ font-size: 2.5rem;
+ }
  }
  </style>
 </head>
 <body>
- <div id="particles-js" class="particles-bg"></div>
- 
- <div class="container">
- <div class="header">
- <h1>VOR APIS</h1>
- <p class="description">Dapatkan API Secara Gratis<br>No Ribet Dan Tanpa Login.</p>
- 
- <div class="status-panel">
- <div class="system-status">
- <h3>SYSTEM STATUS</h3>
- <div class="cyber-line"></div>
- <p>Battery Level: <span id="battery-level">Loading...</span></p>
- <div class="battery-status">
- <div class="battery-fill" id="battery-fill"></div>
- </div>
- <p>System Readiness: <span id="system-readiness">87%</span></p>
- <div class="progress-bar">
- <div class="progress-fill" style="width: 87%"></div>
+ <nav class="navbar">
+ <div class="navbar-content">
+ <div class="logo">Vortex-APIs</div>
+ <div class="nav-links">
+ <a href="#features">Features</a>
+ <a href="#docs">Documentation</a>
+ <a href="#contact">Contact</a>
  </div>
  </div>
- </div>
- <a href="https://vor-apis.vercel.app/">
- <button class="main-btn">STARS NOW</button>
- </a>
- </div>
+ </nav>
 
+ <section class="hero">
+ <div class="hero-content">
+ <h1>Power Your Applications with Vortex-APIs</h1>
+ <p>Solusi API berkinerja tinggi untuk pengembang modern. Integrasi yang dapat diskalakan, aman, dan sangat cepat.</p>
+ <a href="https://vor-apis.biz.id/" target="_blank" class="cta-button">
+ Continue In the Apis</a>
+ </div>
+ </section>
+
+ <section class="features" id="features">
  <div class="features-grid">
  <div class="feature-card">
- <h3>Keunggulan</h3>
- <p>Memiliki Api Yang Keren Untuk Kebutuhan Aplikasi Kamu Dan Bot WhatsApp</p>
+ <i class="fas fa-bolt feature-icon"></i>
+ <h3>Lightning Fast</h3>
+ <p>Titik akhir API yang dioptimalkan dengan waktu respons di bawah 50 ms dijamin deh.</p>
  </div>
  <div class="feature-card">
- <h3>Layanan Gratis</h3>
- <p>Nikmati Layanan Api Gratis Tanpa Berbayar Dan Tanpa Login Untuk Mempermudah Pengguna.</p>
+ <i class="fas fa-shield-alt feature-icon"></i>
+ <h3>Military-Grade Security</h3>
+ <p>Keamanan plus dengan enkripsi AES-256 dan OAuth2.0</p>
  </div>
- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+ <div class="feature-card">
+ <i class="fas fa-infinity feature-icon"></i>
+ <h3>99.99% Uptime</h3>
+ <p>Keandalan terjamin dengan infrastruktur server terdistribusi kami</p>
+ </div>
+ </div>
+ </section>
+
+ <section class="docs-section" id="docs">
+ <div class="docs-content">
+ <h2>Comprehensive Documentation</h2>
+ <p>Jelajahi kode terperinci kami dengan contoh kode dalam bahasa pemrograman</p>
+ <a href="https://whatsapp.com/channel/0029VaxL7402ZjCmqq6FjE1C" class="cta-button">View Documentation</a>
+ </div>
+ </section>
+
+ <footer id="contact">
+ <div class="logo">Vortex-APIs</div>
+ <p>© Vortex-APIs. </p>
+ <a href="https://wa.me/6281527100923?text=bang%20lu%20ganteng" target="_blank" class="cta-button" style="margin-top: 2rem;">
+ Contact Support
+ </a>
+ </footer>
+
  <script>
- particlesJS('particles-js', {
- particles: {
- number: { value: 150 },
- color: { value: '#00f3ff' },
- shape: { type: 'circle' },
- opacity: { value: 0.5 },
- size: { value: 3 },
- move: {
- enable: true,
- speed: 2,
- direction: 'none',
- random: true,
- straight: false,
- out_mode: 'out',
- bounce: false
- }
- },
- interactivity: {
- detect_on: 'canvas',
- events: {
- onhover: { enable: true, mode: 'repulse' },
- onclick: { enable: true, mode: 'push' },
- resize: true
- }
- },
- retina_detect: true
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+ anchor.addEventListener('click', function (e) {
+ e.preventDefault();
+ document.querySelector(this.getAttribute('href')).scrollIntoView({
+ behavior: 'smooth'
  });
- if ('getBattery' in navigator) {
- navigator.getBattery().then(battery => {
- function updateBatteryStatus() {
- const batteryPercent = Math.floor(battery.level * 100);
- document.getElementById('battery-level').textContent = `${batteryPercent}%`;
- document.getElementById('battery-fill').style.width = `${batteryPercent}%`;
- }
- battery.addEventListener('levelchange', updateBatteryStatus);
- updateBatteryStatus();
  });
- } else {
- document.getElementById('battery-level').textContent = 'N/A';
- }
- let readiness = 87;
- const readinessElement = document.getElementById('system-readiness');
- setInterval(() => {
- readiness = (readiness >= 100) ? 87 : readiness + Math.random();
- readinessElement.textContent = `${Math.min(100, Math.floor(readiness))}%`;
- }, 3000);
+ });
+ const mobileMenuToggle = document.createElement('div');
+ mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+ mobileMenuToggle.style.color = '#fff';
+ mobileMenuToggle.style.fontSize = '1.5rem';
+ mobileMenuToggle.style.cursor = 'pointer';
+ mobileMenuToggle.addEventListener('click', () => {
+ document.querySelector('.nav-links').style.display = 
+ document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex';
+ });
+ document.querySelector('.navbar-content').appendChild(mobileMenuToggle);
  </script>
 </body>
 </html>
